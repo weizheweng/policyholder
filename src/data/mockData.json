@@ -1,0 +1,462 @@
+[
+  {
+      "code": "C001",
+      "name": "John Doe",
+      "registration_date": "2024-01-15T08:30:00Z",
+      "introducer_code": "C1001",
+      "left": {
+          "code": "C002",
+          "name": "Alice Smith",
+          "registration_date": "2023-05-22T08:30:00Z",
+          "introducer_code": "C005",
+          "relation_type": "direct"
+      },
+      "right": {
+          "code": "C003",
+          "name": "Bob Johnson",
+          "registration_date": "2022-08-10T08:30:00Z",
+          "introducer_code": "C1003",
+          "relation_type": "indirect"
+      }
+  },
+  {
+      "code": "C002",
+      "name": "Alice Smith",
+      "registration_date": "2023-05-22T08:30:00Z",
+      "introducer_code": "C005",
+      "left": {
+          "code": "C004",
+          "name": "Charlie Brown",
+          "registration_date": "2023-03-18T08:30:00Z",
+          "introducer_code": "C1005",
+          "relation_type": "direct"
+      },
+      "right": {
+          "code": "C001",
+          "name": "John Doe",
+          "registration_date": "2024-01-15T08:30:00Z",
+          "introducer_code": "C1001",
+          "relation_type": "indirect"
+      }
+  },
+  {
+      "code": "C003",
+      "name": "Bob Johnson",
+      "registration_date": "2022-08-10T08:30:00Z",
+      "introducer_code": "C1003",
+      "left": {
+          "code": "C001",
+          "name": "John Doe",
+          "registration_date": "2024-01-15T08:30:00Z",
+          "introducer_code": "C1001",
+          "relation_type": "indirect"
+      },
+      "right": {
+          "code": "C005",
+          "name": "Diana Prince",
+          "registration_date": "2022-12-25T08:30:00Z",
+          "introducer_code": "C1006",
+          "relation_type": "direct"
+      }
+  },
+  {
+      "code": "C004",
+      "name": "Charlie Brown",
+      "registration_date": "2023-03-18T08:30:00Z",
+      "introducer_code": "C1005",
+      "left": {
+          "code": "C006",
+          "name": "Eve Adams",
+          "registration_date": "2022-09-14T08:30:00Z",
+          "introducer_code": "C1007",
+          "relation_type": "direct"
+      },
+      "right": {
+          "code": "C002",
+          "name": "Alice Smith",
+          "registration_date": "2023-05-22T08:30:00Z",
+          "introducer_code": "C005",
+          "relation_type": "indirect"
+      }
+  },
+  {
+      "code": "C005",
+      "name": "Diana Prince",
+      "registration_date": "2022-12-25T08:30:00Z",
+      "introducer_code": "C1006",
+      "left": {
+          "code": "C007",
+          "name": "Frank Castle",
+          "registration_date": "2022-11-11T08:30:00Z",
+          "introducer_code": "C1008",
+          "relation_type": "direct"
+      },
+      "right": {
+          "code": "C003",
+          "name": "Bob Johnson",
+          "registration_date": "2022-08-10T08:30:00Z",
+          "introducer_code": "C1003",
+          "relation_type": "indirect"
+      }
+  },
+  {
+      "code": "C006",
+      "name": "Eve Adams",
+      "registration_date": "2022-09-14T08:30:00Z",
+      "introducer_code": "C1007",
+      "left": {
+          "code": "C008",
+          "name": "Grace Lee",
+          "registration_date": "2023-01-01T08:30:00Z",
+          "introducer_code": "C1009",
+          "relation_type": "indirect"
+      },
+      "right": {
+          "code": "C005",
+          "name": "Diana Prince",
+          "registration_date": "2022-12-25T08:30:00Z",
+          "introducer_code": "C1006",
+          "relation_type": "direct"
+      }
+  },
+  {
+      "code": "C007",
+      "name": "Frank Castle",
+      "registration_date": "2022-11-11T08:30:00Z",
+      "introducer_code": "C1008",
+      "left": {
+          "code": "C009",
+          "name": "Henry Ford",
+          "registration_date": "2023-02-10T08:30:00Z",
+          "introducer_code": "C1010",
+          "relation_type": "direct"
+      },
+      "right": {
+          "code": "C004",
+          "name": "Charlie Brown",
+          "registration_date": "2023-03-18T08:30:00Z",
+          "introducer_code": "C1005",
+          "relation_type": "indirect"
+      }
+  },
+  {
+      "code": "C008",
+      "name": "Grace Lee",
+      "registration_date": "2023-01-01T08:30:00Z",
+      "introducer_code": "C1009",
+      "left": {
+          "code": "C010",
+          "name": "Ivy Wilson",
+          "registration_date": "2024-02-20T08:30:00Z",
+          "introducer_code": "C1011",
+          "relation_type": "direct"
+      },
+      "right": {
+          "code": "C006",
+          "name": "Eve Adams",
+          "registration_date": "2022-09-14T08:30:00Z",
+          "introducer_code": "C1007",
+          "relation_type": "indirect"
+      }
+  },
+  {
+      "code": "C009",
+      "name": "Henry Ford",
+      "registration_date": "2023-02-10T08:30:00Z",
+      "introducer_code": "C1010",
+      "left": {
+          "code": "C001",
+          "name": "John Doe",
+          "registration_date": "2024-01-15T08:30:00Z",
+          "introducer_code": "C1001",
+          "relation_type": "indirect"
+      },
+      "right": {
+          "code": "C007",
+          "name": "Frank Castle",
+          "registration_date": "2022-11-11T08:30:00Z",
+          "introducer_code": "C1008",
+          "relation_type": "direct"
+      }
+  },
+  {
+      "code": "C010",
+      "name": "Ivy Wilson",
+      "registration_date": "2024-02-20T08:30:00Z",
+      "introducer_code": "C1011",
+      "left": {
+          "code": "C011",
+          "name": "Jack Daniels",
+          "registration_date": "2024-03-05T08:30:00Z",
+          "introducer_code": "C1012",
+          "relation_type": "indirect"
+      },
+      "right": {
+          "code": "C008",
+          "name": "Grace Lee",
+          "registration_date": "2023-01-01T08:30:00Z",
+          "introducer_code": "C1009",
+          "relation_type": "direct"
+      }
+  },
+  {
+      "code": "C011",
+      "name": "Jack Daniels",
+      "registration_date": "2024-03-05T08:30:00Z",
+      "introducer_code": "C1012",
+      "left": {
+          "code": "C012",
+          "name": "Kathy Sullivan",
+          "registration_date": "2023-04-15T08:30:00Z",
+          "introducer_code": "C1013",
+          "relation_type": "direct"
+      },
+      "right": {
+          "code": "C009",
+          "name": "Henry Ford",
+          "registration_date": "2023-02-10T08:30:00Z",
+          "introducer_code": "C1010",
+          "relation_type": "indirect"
+      }
+  },
+  {
+      "code": "C012",
+      "name": "Kathy Sullivan",
+      "registration_date": "2023-04-15T08:30:00Z",
+      "introducer_code": "C1013",
+      "left": {
+          "code": "C013",
+          "name": "Leo Messi",
+          "registration_date": "2023-06-20T08:30:00Z",
+          "introducer_code": "C1014",
+          "relation_type": "indirect"
+      },
+      "right": {
+          "code": "C010",
+          "name": "Ivy Wilson",
+          "registration_date": "2024-02-20T08:30:00Z",
+          "introducer_code": "C1011",
+          "relation_type": "direct"
+      }
+  },
+  {
+      "code": "C013",
+      "name": "Leo Messi",
+      "registration_date": "2023-06-20T08:30:00Z",
+      "introducer_code": "C1014",
+      "left": {
+          "code": "C014",
+          "name": "Mia Wong",
+          "registration_date": "2023-07-12T08:30:00Z",
+          "introducer_code": "C1015",
+          "relation_type": "direct"
+      },
+      "right": {
+          "code": "C002",
+          "name": "Alice Smith",
+          "registration_date": "2023-05-22T08:30:00Z",
+          "introducer_code": "C005",
+          "relation_type": "indirect"
+      }
+  },
+  {
+      "code": "C014",
+      "name": "Mia Wong",
+      "registration_date": "2023-07-12T08:30:00Z",
+      "introducer_code": "C1015",
+      "left": {
+          "code": "C015",
+          "name": "Nina Turner",
+          "registration_date": "2024-04-01T08:30:00Z",
+          "introducer_code": "C1016",
+          "relation_type": "indirect"
+      },
+      "right": {
+          "code": "C013",
+          "name": "Leo Messi",
+          "registration_date": "2023-06-20T08:30:00Z",
+          "introducer_code": "C1014",
+          "relation_type": "direct"
+      }
+  },
+  {
+      "code": "C015",
+      "name": "Nina Turner",
+      "registration_date": "2024-04-01T08:30:00Z",
+      "introducer_code": "C1016",
+      "left": {
+          "code": "C016",
+          "name": "Oscar Wilde",
+          "registration_date": "2024-05-05T08:30:00Z",
+          "introducer_code": "C1017",
+          "relation_type": "direct"
+      },
+      "right": {
+          "code": "C014",
+          "name": "Mia Wong",
+          "registration_date": "2023-07-12T08:30:00Z",
+          "introducer_code": "C1015",
+          "relation_type": "indirect"
+      }
+  },
+  {
+      "code": "C016",
+      "name": "Oscar Wilde",
+      "registration_date": "2024-05-05T08:30:00Z",
+      "introducer_code": "C1017",
+      "left": {
+          "code": "C017",
+          "name": "Paul Rudd",
+          "registration_date": "2024-06-10T08:30:00Z",
+          "introducer_code": "C1018",
+          "relation_type": "indirect"
+      },
+      "right": {
+          "code": "C015",
+          "name": "Nina Turner",
+          "registration_date": "2024-04-01T08:30:00Z",
+          "introducer_code": "C1016",
+          "relation_type": "direct"
+      }
+  },
+  {
+      "code": "C017",
+      "name": "Paul Rudd",
+      "registration_date": "2024-06-10T08:30:00Z",
+      "introducer_code": "C1018",
+      "left": {
+          "code": "C018",
+          "name": "Quinn Fabra",
+          "registration_date": "2024-07-15T08:30:00Z",
+          "introducer_code": "C1019",
+          "relation_type": "direct"
+      },
+      "right": {
+          "code": "C016",
+          "name": "Oscar Wilde",
+          "registration_date": "2024-05-05T08:30:00Z",
+          "introducer_code": "C1017",
+          "relation_type": "indirect"
+      }
+  },
+  {
+      "code": "C018",
+      "name": "Quinn Fabra",
+      "registration_date": "2024-07-15T08:30:00Z",
+      "introducer_code": "C1019",
+      "left": {
+          "code": "C019",
+          "name": "Robert Jr.",
+          "registration_date": "2024-08-20T08:30:00Z",
+          "introducer_code": "C1020",
+          "relation_type": "indirect"
+      },
+      "right": {
+          "code": "C017",
+          "name": "Paul Rudd",
+          "registration_date": "2024-06-10T08:30:00Z",
+          "introducer_code": "C1018",
+          "relation_type": "direct"
+      }
+  },
+  {
+      "code": "C019",
+      "name": "Robert Jr.",
+      "registration_date": "2024-08-20T08:30:00Z",
+      "introducer_code": "C1020",
+      "left": {
+          "code": "C020",
+          "name": "Scar Johan",
+          "registration_date": "2024-09-01T08:30:00Z",
+          "introducer_code": "C1021",
+          "relation_type": "direct"
+      },
+      "right": {
+          "code": "C018",
+          "name": "Quinn Fabra",
+          "registration_date": "2024-07-15T08:30:00Z",
+          "introducer_code": "C1019",
+          "relation_type": "indirect"
+      }
+  },
+  {
+      "code": "C020",
+      "name": "Scar Johan",
+      "registration_date": "2024-09-01T08:30:00Z",
+      "introducer_code": "C1021",
+      "left": {
+          "code": "C021",
+          "name": "Tom Holland",
+          "registration_date": "2024-09-10T08:30:00Z",
+          "introducer_code": "C1022",
+          "relation_type": "indirect"
+      },
+      "right": {
+          "code": "C019",
+          "name": "Robert Jr.",
+          "registration_date": "2024-08-20T08:30:00Z",
+          "introducer_code": "C1020",
+          "relation_type": "direct"
+      }
+  },
+  {
+      "code": "C021",
+      "name": "Tom Holland",
+      "registration_date": "2024-09-10T08:30:00Z",
+      "introducer_code": "C1022",
+      "left": {
+          "code": "C022",
+          "name": "Uma Thurman",
+          "registration_date": "2024-09-15T08:30:00Z",
+          "introducer_code": "C1023",
+          "relation_type": "direct"
+      },
+      "right": {
+          "code": "C020",
+          "name": "Scar Johan",
+          "registration_date": "2024-09-01T08:30:00Z",
+          "introducer_code": "C1021",
+          "relation_type": "indirect"
+      }
+  },
+  {
+      "code": "C022",
+      "name": "Uma Thurman",
+      "registration_date": "2024-09-15T08:30:00Z",
+      "introducer_code": "C1023",
+      "left": {
+          "code": "C023",
+          "name": "Vin Diesel",
+          "registration_date": "2024-09-20T08:30:00Z",
+          "introducer_code": "C1024",
+          "relation_type": "indirect"
+      },
+      "right": {
+          "code": "C021",
+          "name": "Tom Holland",
+          "registration_date": "2024-09-10T08:30:00Z",
+          "introducer_code": "C1022",
+          "relation_type": "direct"
+      }
+  },
+  {
+      "code": "C023",
+      "name": "Vin Diesel",
+      "registration_date": "2024-09-20T08:30:00Z",
+      "introducer_code": "C1024",
+      "left": {
+          "code": "C024",
+          "name": "Will Smith",
+          "registration_date": "2024-07-15T08:30:00Z",
+          "introducer_code": "C1025",
+          "relation_type": "indirect"
+      },
+      "right": {
+          "code": "C022",
+          "name": "Uma Thurman",
+          "registration_date": "2024-09-15T08:30:00Z",
+          "introducer_code": "C1023",
+          "relation_type": "direct"
+      }
+  }
+]
