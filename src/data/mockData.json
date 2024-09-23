@@ -445,10 +445,10 @@
       "registration_date": "2024-09-20T08:30:00Z",
       "introducer_code": "C1024",
       "left": {
-          "code": "C024",
-          "name": "Will Smith",
-          "registration_date": "2024-07-15T08:30:00Z",
-          "introducer_code": "C1025",
+          "code": "C020",
+          "name": "Scar Johan",
+          "registration_date": "2024-09-01T08:30:00Z",
+          "introducer_code": "C1021",
           "relation_type": "indirect"
       },
       "right": {
