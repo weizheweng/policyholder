@@ -1,4 +1,4 @@
-type RelationType = 'direct' | 'indirect'
+export type RelationType = 'direct' | 'indirect'
 
 interface ChildPolicyholder {
   code: string,
