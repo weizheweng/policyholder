@@ -5,15 +5,16 @@ import { TreeChildrenLine } from '../Tree/TreeChildrenLine'
 import { SearchIcon } from '@chakra-ui/icons'
 import { useState } from 'react'
 import { useApiPolicyholders } from '../../hooks-api/useApiPolicyholders'
+import { usePolicyholder } from '../PolicyholderProvider/usePolicyholder'
 
 export function FirstLevel () {
-  const [code, setCode] = useState('')
+  const { code, changeCode } = usePolicyholder()
   const [inputValue, setInputValue] = useState('')
 
   const { data } = useApiPolicyholders(code)
   const { left, right } = data ?? {}
   const handleSearch = () => {
-    setCode(inputValue)
+    changeCode(inputValue)
   }
 
   return (

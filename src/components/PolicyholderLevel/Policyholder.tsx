@@ -1,8 +1,9 @@
-import { Box, VStack, Text, Flex, Icon } from '@chakra-ui/react'
+import { Box, VStack, Text, Flex, Icon, Button } from '@chakra-ui/react'
 import { type RelationType } from '../../types/Policyholder'
 import { format } from 'date-fns'
 import { DATE_FORMAT } from '../../constants/format'
 import { CloseIcon } from '@chakra-ui/icons'
+import { usePolicyholder } from '../PolicyholderProvider/usePolicyholder'
 
 interface PolicyholderProps {
   code: string,
@@ -23,12 +24,18 @@ const BoxStyle = {
 }
 
 export function Policyholder ({ code, name, registrationDate, introducerCode, relationType, isFirstLevel }: Partial<PolicyholderProps>) {
+  const { changeCode } = usePolicyholder()
   const isNotData = !code && !name && !registrationDate && !introducerCode
 
   const getBackgroundColor = () => {
     if (isFirstLevel) return 'yellow.200'
     if (relationType === 'direct') return 'green.200'
     if (relationType === 'indirect') return 'gray.200'
+  }
+
+  const handleChangeCode = () => {
+    if (!code) return
+    changeCode(code)
   }
 
   return (
@@ -38,7 +45,14 @@ export function Policyholder ({ code, name, registrationDate, introducerCode, re
           ? <VStack gap={1} alignItems="flex-start">
             <Text fontSize="sm" color="black">
               編號：
-              {code}
+              <Button
+                color="blue.600"
+                fontSize="sm"
+                variant="link"
+                onClick={handleChangeCode}
+              >
+                {code}
+              </Button>
             </Text>
             <Text fontSize="sm" color="black">
               姓名：

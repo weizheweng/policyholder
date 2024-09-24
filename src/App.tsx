@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import { Layout } from './components/Layout/Layout'
 import { FirstLevel } from './components/PolicyholderLevel/FirstLevel'
+import { PolicyholderProvider } from './components/PolicyholderProvider/PolicyholderProvider'
 import './global.css'
 
 export function App () {
@@ -10,7 +11,14 @@ export function App () {
       element: <Layout />,
       children: [
         { path: '/', element: <Navigate to="/policyholder" replace /> },
-        { path: '/policyholder', element: <FirstLevel /> },
+        {
+          path: '/policyholder',
+          element: (
+            <PolicyholderProvider>
+              <FirstLevel />
+            </PolicyholderProvider>
+          ),
+        },
       ],
     },
   ])
