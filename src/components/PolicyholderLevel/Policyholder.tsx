@@ -68,7 +68,7 @@ export function Policyholder ({ code, name, registrationDate, introducerCode, re
                   {code}
                 </Button>
               </Text>
-              <Icon as={ChevronUpIcon} cursor="pointer" onClick={handleTop} />
+              <Icon as={ChevronUpIcon} cursor="pointer" color="black" onClick={handleTop} />
             </Flex>
             <Text fontSize="sm" color="black">
               姓名：
