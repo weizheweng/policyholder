@@ -1,9 +1,11 @@
-import { Box, VStack, Text, Flex, Icon, Button } from '@chakra-ui/react'
+import { VStack, Text, Flex, Icon, Button } from '@chakra-ui/react'
 import { type RelationType } from '../../types/Policyholder'
 import { format } from 'date-fns'
 import { DATE_FORMAT } from '../../constants/format'
-import { CloseIcon } from '@chakra-ui/icons'
+import { ChevronUpIcon, CloseIcon } from '@chakra-ui/icons'
 import { usePolicyholder } from '../PolicyholderProvider/usePolicyholder'
+import { useApiPolicyholdersTop } from '../../hooks-api/useApiPolicyholdersTop'
+import { useEffect, useState } from 'react'
 
 interface PolicyholderProps {
   code: string,
@@ -24,7 +26,9 @@ const BoxStyle = {
 }
 
 export function Policyholder ({ code, name, registrationDate, introducerCode, relationType, isFirstLevel }: Partial<PolicyholderProps>) {
+  const [codeTop, setCodeTop] = useState('')
   const { changeCode } = usePolicyholder()
+  const { data } = useApiPolicyholdersTop(codeTop)
   const isNotData = !code && !name && !registrationDate && !introducerCode
 
   const getBackgroundColor = () => {
@@ -38,22 +42,34 @@ export function Policyholder ({ code, name, registrationDate, introducerCode, re
     changeCode(code)
   }
 
+  const handleTop = () => {
+    setCodeTop(code || '')
+  }
+
+  useEffect(() => {
+    if (!data) return
+    changeCode(data?.code || '')
+  }, [changeCode, data])
+
   return (
     <Flex sx={BoxStyle} bgColor={getBackgroundColor()}>
       {
         !isNotData
           ? <VStack gap={1} alignItems="flex-start">
-            <Text fontSize="sm" color="black">
-              編號：
-              <Button
-                color="blue.600"
-                fontSize="sm"
-                variant="link"
-                onClick={handleChangeCode}
-              >
-                {code}
-              </Button>
-            </Text>
+            <Flex gap={1} alignItems="center" justifyContent="space-between" w="100%">
+              <Text fontSize="sm" color="black">
+                編號：
+                <Button
+                  color="blue.600"
+                  fontSize="sm"
+                  variant="link"
+                  onClick={handleChangeCode}
+                >
+                  {code}
+                </Button>
+              </Text>
+              <Icon as={ChevronUpIcon} cursor="pointer" onClick={handleTop} />
+            </Flex>
             <Text fontSize="sm" color="black">
               姓名：
               {name}

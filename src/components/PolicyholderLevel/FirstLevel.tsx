@@ -6,6 +6,7 @@ import { SearchIcon } from '@chakra-ui/icons'
 import { useState } from 'react'
 import { useApiPolicyholders } from '../../hooks-api/useApiPolicyholders'
 import { usePolicyholder } from '../PolicyholderProvider/usePolicyholder'
+import { PolicyholderNotFound } from './PolicyholderFound'
 
 export function FirstLevel () {
   const { code, changeCode } = usePolicyholder()
@@ -16,6 +17,8 @@ export function FirstLevel () {
   const handleSearch = () => {
     changeCode(inputValue)
   }
+
+  const hasData = !!data && Object.keys(data).length > 0
 
   return (
     <>
@@ -32,24 +35,29 @@ export function FirstLevel () {
           onClick={handleSearch}
         />
       </HStack>
-      <Flex overflow="auto" pb={2} pt={4}>
-        <VStack gap={0}>
-          <Policyholder
-            code={data?.code}
-            name={data?.name}
-            registrationDate={data?.registration_date}
-            introducerCode={data?.introducer_code}
-            isFirstLevel
-          />
-          <TreeChildrenLine />
-          <SecondLevel
-            firstNodeCode={left?.code}
-            firstNodeRelationType={left?.relation_type}
-            secondNodeCode={right?.code}
-            secondNodeRelationType={right?.relation_type}
-          />
-        </VStack>
-      </Flex>
+      {
+        hasData
+          ? <Flex overflow="auto" pb={2} pt={4}>
+            <VStack gap={0}>
+              <Policyholder
+                code={data?.code}
+                name={data?.name}
+                registrationDate={data?.registration_date}
+                introducerCode={data?.introducer_code}
+                isFirstLevel
+              />
+              <TreeChildrenLine />
+              <SecondLevel
+                firstNodeCode={left?.code}
+                firstNodeRelationType={left?.relation_type}
+                secondNodeCode={right?.code}
+                secondNodeRelationType={right?.relation_type}
+              />
+            </VStack>
+          </Flex>
+          : <PolicyholderNotFound />
+      }
+
     </>
   )
 }

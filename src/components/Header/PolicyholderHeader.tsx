@@ -13,7 +13,7 @@ const Left = () => {
         <Logo onClick={handleToHomePage} />
       </Box>
       <Text as="b">
-        保戶介紹關係系統
+        保戶關係查詢
       </Text>
     </HStack>
   )
