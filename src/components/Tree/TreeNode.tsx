@@ -25,11 +25,11 @@ const BoxStyle = {
   minHeight: 28,
 }
 
-export function Policyholder ({ code, name, registrationDate, introducerCode, relationType, isFirstLevel }: Partial<PolicyholderProps>) {
+export function TreeNode ({ code, name, registrationDate, introducerCode, relationType, isFirstLevel }: Partial<PolicyholderProps>) {
   const [codeTop, setCodeTop] = useState('')
-  const { changeCode } = usePolicyholder()
+  const { setCode } = usePolicyholder()
   const { data } = useApiPolicyholdersTop(codeTop)
-  const isNotData = !code && !name && !registrationDate && !introducerCode
+  const isNoData = !code && !name && !registrationDate && !introducerCode
 
   const getBackgroundColor = () => {
     if (isFirstLevel) return 'yellow.200'
@@ -39,7 +39,7 @@ export function Policyholder ({ code, name, registrationDate, introducerCode, re
 
   const handleChangeCode = () => {
     if (!code) return
-    changeCode(code)
+    setCode(code)
   }
 
   const handleTop = () => {
@@ -48,13 +48,13 @@ export function Policyholder ({ code, name, registrationDate, introducerCode, re
 
   useEffect(() => {
     if (!data) return
-    changeCode(data?.code || '')
-  }, [changeCode, data])
+    setCode(data?.code || '')
+  }, [data, setCode])
 
   return (
     <Flex sx={BoxStyle} bgColor={getBackgroundColor()}>
       {
-        !isNotData
+        !isNoData
           ? <VStack gap={1} alignItems="flex-start">
             <Flex gap={1} alignItems="center" justifyContent="space-between" w="100%">
               <Text fontSize="sm" color="black">

@@ -1,8 +1,8 @@
-import { createContext, useCallback, useMemo, useState, type ReactNode } from 'react'
+import { createContext, type Dispatch, type SetStateAction, useMemo, useState, type ReactNode } from 'react'
 
-interface PolicyholderContextProps extends PolicyholderProviderProps {
-  code?: string,
-  changeCode: (code: string) => void,
+interface PolicyholderContextProps {
+  code: string,
+  setCode: Dispatch<SetStateAction<string>>,
 }
 
 export const PolicyholderContext = createContext<PolicyholderContextProps | null>(null)
@@ -13,15 +13,13 @@ interface PolicyholderProviderProps {
 
 export const PolicyholderProvider = ({ children }: PolicyholderProviderProps) => {
   const [code, setCode] = useState('')
-  const changeCode = useCallback((code: string) => setCode(code), [])
 
   const contextValue = useMemo(
     () => ({
       code,
-      changeCode,
-      children,
+      setCode,
     }),
-    [code, changeCode, children]
+    [code, setCode]
   )
 
   return (

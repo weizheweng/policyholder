@@ -1,8 +1,8 @@
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import { Layout } from './components/Layout/Layout'
-import { FirstLevel } from './components/PolicyholderLevel/FirstLevel'
 import { PolicyholderProvider } from './components/PolicyholderProvider/PolicyholderProvider'
 import './global.css'
+import { PolicyholderPage } from './components/Policyholder/PolicyholderPage'
 
 export function App () {
   const router = createBrowserRouter([
@@ -15,7 +15,7 @@ export function App () {
           path: '/policyholder',
           element: (
             <PolicyholderProvider>
-              <FirstLevel />
+              <PolicyholderPage />
             </PolicyholderProvider>
           ),
         },
